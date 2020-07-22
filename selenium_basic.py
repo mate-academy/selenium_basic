@@ -1,9 +1,14 @@
-# Import WD lib
 
-# Create WD Chrome Object
 
-# Open "https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html"
+from selenium import webdriver
+import time
 
-# Click on [Normal success message button]
-
-# assert appeared green success message
+driver = webdriver.Chrome()
+driver.get("https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html")
+time.sleep(5)
+assert "Selenium" in driver.title
+element = driver.find_element_by_css_selector("#normal-btn-success")
+element.click()
+assert "normal success message" in driver.page_source
+driver.close()
+print("[Normal success message] button is on page")
