@@ -22,11 +22,11 @@ class SeleniumFirstTest(unittest.TestCase):
 
         # Click on [Normal success message button]
         element.click()
-
         # assert appeared green success message
         appeared_elem = driver.find_element_by_xpath('/html/body/div[2]/div/div[2]/div/div[2]/div[2]')
-        print(appeared_elem.get_attribute('style'))
-        assert appeared_elem.get_attribute('style') == "display: block;"
+        # print(appeared_elem.get_attribute('style'))
+        # assert appeared_elem.get_attribute('style') == "display: block;"
+        assert appeared_elem.is_displayed()
 
     def tearDown(self):
         self.driver.close()
