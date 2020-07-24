@@ -9,4 +9,4 @@ driver.get("https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html
 driver.find_element_by_id("autoclosable-btn-success").click();
 alertMessage = driver.find_element_by_class_name("alert, alert-success, alert-autocloseable-success").text
 
-assert alertMessage, "I'm an autocloseable success message. I will hide in 5 seconds."
+assert "I'm an autocloseable success message. I will hide in 5 seconds." in alertMessage
