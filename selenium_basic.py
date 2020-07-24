@@ -1,9 +1,12 @@
-# Import WD lib
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
-# Create WD Chrome Object
 
-# Open "https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html"
+from selenium import webdriver
+driver = webdriver.Chrome(executable_path="c:/selenium/chromedriver.exe")
+driver.get("https://www.seleniumeasy.com/test/bootstrap-alert-messages-demo.html")
+driver.find_element_by_id("autoclosable-btn-success").click();
+alertMessage = driver.find_element_by_class_name("alert, alert-success, alert-autocloseable-success").text
 
-# Click on [Normal success message button]
-
-# assert appeared green success message
+assert alertMessage, "I'm an autocloseable success message. I will hide in 5 seconds."
